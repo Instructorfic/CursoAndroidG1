@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CursoAndroid</string>
+    <string name="user_name">Nombre del usuario</string>
+    <string name="user_password">Contraseña</string>
+    <string name="user_button">Iniciar</string>
+    <string name="relative_button_text">Acción 1</string>
+    <string name="relative_text">Texto Acción 1</string>
+</resources>

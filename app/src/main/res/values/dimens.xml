@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_button">120dp</dimen>
+    <dimen name="login_image">120dp</dimen>
+    <dimen name="login_margin">10dp</dimen>
+    <dimen name="login_padding">5dp</dimen>
+    <dimen name="zero_dp">0dp</dimen>
+
+</resources>
