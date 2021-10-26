@@ -5,4 +5,8 @@
     <string name="user_button">Iniciar</string>
     <string name="relative_button_text">Acción 1</string>
     <string name="relative_text">Texto Acción 1</string>
+    <string name="login_forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="forgot_password_username">Escriba su usuario</string>
+    <string name="forgot_password_button_text">Recuperar contraseña</string>
+    <string name="login_content_description_image">Logo de la compañía</string>
 </resources>
