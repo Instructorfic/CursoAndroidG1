@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:id="@+id/svLoremIpsum"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/lorem_ipsum_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/login_margin"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lorem_ipsum"
+            />
+    </ScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/svLoremIpsumHorizontal"
+        android:layout_width="@dimen/lorem_ipsum_size_horizontal"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/svLoremIpsum"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/login_margin"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lorem_ipsum"
+            />
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:id="@+id/svLoremLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/lorem_ipsum_linear_size"
+        app:layout_constraintTop_toBottomOf="@id/svLoremIpsumHorizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/login_margin"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_1"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_1"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_1"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_1"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_1"
+                />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
