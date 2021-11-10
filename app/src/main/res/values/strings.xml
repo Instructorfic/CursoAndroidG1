@@ -14,4 +14,5 @@
     <string name="homeText">Pantalla principal</string>
     <string name="homeWebPageView">Mostrar página web</string>
     <string name="home_call">Llamar</string>
+    <string name="home_settings">Configuración</string>
 </resources>

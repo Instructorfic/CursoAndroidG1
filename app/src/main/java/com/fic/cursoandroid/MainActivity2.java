@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 
@@ -33,6 +34,15 @@ public class MainActivity2 extends AppCompatActivity {
                 Uri dialUri = Uri.parse("tel:6677000000");
                 Intent dialIntent = new Intent(Intent.ACTION_DIAL,dialUri);
                 startActivity(dialIntent);
+            }
+        });
+
+        Button btnSettings = (Button) findViewById(R.id.btnSettings);
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent settingsIntent = new Intent(Settings.ACTION_SETTINGS);
+                startActivity(settingsIntent);
             }
         });
     }

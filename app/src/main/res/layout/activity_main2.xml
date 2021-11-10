@@ -37,4 +37,14 @@
         app:layout_constraintTop_toBottomOf="@id/btnShowView"
         />
 
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_margin="@dimen/login_margin"
+        android:backgroundTint="@color/fic_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/home_settings"
+        app:layout_constraintTop_toBottomOf="@id/btnDial"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
