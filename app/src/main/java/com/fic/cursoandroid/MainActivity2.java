@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -15,6 +16,13 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        /*Uri webSiteURL = getIntent().getData();
+
+        Toast.makeText(getApplicationContext(),webSiteURL.toString(),Toast.LENGTH_LONG).show();*/
+
+        String getStringMessage = getIntent().getStringExtra("message");
+        Toast.makeText(getApplicationContext(),getStringMessage,Toast.LENGTH_LONG).show();
 
         Button btnShowWebPage = (Button) findViewById(R.id.btnShowView);
         btnShowWebPage.setOnClickListener(new View.OnClickListener() {
