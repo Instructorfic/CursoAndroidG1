@@ -47,4 +47,22 @@
         app:layout_constraintTop_toBottomOf="@id/btnDial"
         />
 
+    <TextView
+        android:id="@+id/txtMessage"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/login_margin"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/login_text_size"
+        app:layout_constraintTop_toBottomOf="@id/btnSettings"
+        />
+
+    <TextView
+        android:id="@+id/txtError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/login_margin"
+        android:textSize="@dimen/login_text_size"
+        app:layout_constraintTop_toBottomOf="@id/txtMessage"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

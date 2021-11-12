@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -21,8 +24,20 @@ public class MainActivity2 extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(),webSiteURL.toString(),Toast.LENGTH_LONG).show();*/
 
-        String getStringMessage = getIntent().getStringExtra("message");
-        Toast.makeText(getApplicationContext(),getStringMessage,Toast.LENGTH_LONG).show();
+        /*String getStringMessage = getIntent().getStringExtra("message");
+        Toast.makeText(getApplicationContext(),getStringMessage,Toast.LENGTH_LONG).show();*/
+
+        Bundle extras = getIntent().getExtras();
+
+        String message = extras.getString("message","Error en el mensaje");
+        int error = extras.getInt("error",-1);
+
+        TextView txtMessage = (TextView) findViewById(R.id.txtMessage);
+        TextView txtError = (TextView) findViewById(R.id.txtError);
+
+        txtMessage.setText(message);
+        txtError.setText(String.valueOf(error));
+
 
         Button btnShowWebPage = (Button) findViewById(R.id.btnShowView);
         btnShowWebPage.setOnClickListener(new View.OnClickListener() {

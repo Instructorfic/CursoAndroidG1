@@ -27,7 +27,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent showActivity = new Intent(getApplicationContext(),MainActivity2.class);
                 //showActivity.setData(Uri.parse(webPageUrl));
                 String message = "Hola Actividad 2";
-                showActivity.putExtra("message",message);
+                int error = 1;
+
+                //Crear paquete de información
+                Bundle bundle = new Bundle();
+                bundle.putString("message",message);
+                bundle.putInt("error",error);
+
+                showActivity.putExtras(bundle);
+
+                //showActivity.putExtra("message",message);
                 startActivity(showActivity);
             }
         });
