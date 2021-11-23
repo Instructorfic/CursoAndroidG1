@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     final String webPageUrl = "http://info.uas.edu.mx";
     final String MAIN_ACTIVITY_TAG = MainActivity.class.getSimpleName();
@@ -29,25 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent showActivity = new Intent(getApplicationContext(),MainActivity2.class);
-                //showActivity.setData(Uri.parse(webPageUrl));
-                String message = "Hola Actividad 2";
-                int error = 1;
-
-                //Crear paquete de información
-                Bundle bundle = new Bundle();
-                bundle.putString("message",message);
-                bundle.putInt("error",error);
-
-                showActivity.putExtras(bundle);
-
-                //showActivity.putExtra("message",message);
-                startActivity(showActivity);
-            }
-        });
+        btnLogin.setOnClickListener(testOnClickListener); //Opción 2 para gestión del evento clic
+        //btnLogin.setOnClickListener(new ClickedButton());
+        //btnLogin.setOnClickListener(this);
     }
 
     protected void onStart(){
@@ -85,5 +69,45 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /*Opción 2 para gestión del evento clic*/
+    private View.OnClickListener testOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startTestActivity();
+        }
+    };
+
+    private void startTestActivity(){
+        Intent showActivity = new Intent(getApplicationContext(),MainActivity2.class);
+        //showActivity.setData(Uri.parse(webPageUrl));
+        String message = "Hola Actividad 2";
+        int error = 1;
+
+        //Crear paquete de información
+        Bundle bundle = new Bundle();
+        bundle.putString("message",message);
+        bundle.putInt("error",error);
+
+        showActivity.putExtras(bundle);
+
+        //showActivity.putExtra("message",message);
+        startActivity(showActivity);
+    }
+
+    /*Opción 3 para gestión del evento clic*/
+
+    class ClickedButton implements View.OnClickListener{
+        @Override
+        public void onClick(View v){
+            startTestActivity();
+        }
+    }
+
+    /*Opción 4 para gestión del evento clic*/
+
+    @Override
+    public void onClick(View v){
+        startTestActivity();
+    }
 
 }
