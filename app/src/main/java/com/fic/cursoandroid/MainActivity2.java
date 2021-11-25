@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -43,9 +46,7 @@ public class MainActivity2 extends AppCompatActivity {
         btnShowWebPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://www.google.com");
-                Intent showWebPageIntent = new Intent(Intent.ACTION_VIEW,uri);
-                startActivity(showWebPageIntent);
+                //showPage();
             }
         });
 
@@ -54,9 +55,7 @@ public class MainActivity2 extends AppCompatActivity {
         btnDial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri dialUri = Uri.parse("tel:6677000000");
-                Intent dialIntent = new Intent(Intent.ACTION_DIAL,dialUri);
-                startActivity(dialIntent);
+                //dialPhoneNumber();
             }
         });
 
@@ -64,9 +63,31 @@ public class MainActivity2 extends AppCompatActivity {
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent settingsIntent = new Intent(Settings.ACTION_SETTINGS);
-                startActivity(settingsIntent);
+                //showSettings();
             }
         });
+    }
+
+    public void showPage(MenuItem item){
+        Uri uri = Uri.parse("http://www.google.com");
+        Intent showWebPageIntent = new Intent(Intent.ACTION_VIEW,uri);
+        startActivity(showWebPageIntent);
+    }
+
+    public void dialPhoneNumber(MenuItem item){
+        Uri dialUri = Uri.parse("tel:6677000000");
+        Intent dialIntent = new Intent(Intent.ACTION_DIAL,dialUri);
+        startActivity(dialIntent);
+    }
+
+    public void showSettings(MenuItem item){
+        Intent settingsIntent = new Intent(Settings.ACTION_SETTINGS);
+        startActivity(settingsIntent);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
     }
 }

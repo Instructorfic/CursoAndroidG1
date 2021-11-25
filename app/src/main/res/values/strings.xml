@@ -15,4 +15,7 @@
     <string name="homeWebPageView">Mostrar página web</string>
     <string name="home_call">Llamar</string>
     <string name="home_settings">Configuración</string>
+    <string name="menu_option1">Opción 1</string>
+    <string name="menu_option2">Opción 2</string>
+    <string name="menu_option3">Opción 3</string>
 </resources>

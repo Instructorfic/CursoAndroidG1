@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/mnuOption1"
+    android:title="@string/menu_option1"
+    android:onClick="showPage"
+    />
+
+    <item
+        android:id="@+id/mnuOption2"
+        android:title="@string/menu_option2"
+        android:onClick="dialPhoneNumber"
+        />
+
+    <item
+        android:id="@+id/mnuOption3"
+        android:title="@string/menu_option3"
+        android:onClick="showSettings"
+        />
+</menu>
