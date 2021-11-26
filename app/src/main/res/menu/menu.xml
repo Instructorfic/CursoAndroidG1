@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 <item
     android:id="@+id/mnuOption1"
     android:title="@string/menu_option1"
-    android:onClick="showPage"
+    android:icon="@drawable/ic_menu_web"
+    app:showAsAction="ifRoom"
     />
 
     <item
         android:id="@+id/mnuOption2"
         android:title="@string/menu_option2"
-        android:onClick="dialPhoneNumber"
         />
 
     <item
         android:id="@+id/mnuOption3"
         android:title="@string/menu_option3"
-        android:onClick="showSettings"
         />
+
+    <item
+        android:id="@+id/mnuSubmenu1"
+        android:title="@string/menu_sub1"
+        android:icon="@drawable/ic_menu_sub_list"
+        app:showAsAction="ifRoom"
+        >
+        <menu>
+            <item
+                android:id="@+id/mnuOptionSubmenu1"
+                android:title="@string/menu_option_submenu1"/>
+        </menu>
+
+    </item>
 </menu>

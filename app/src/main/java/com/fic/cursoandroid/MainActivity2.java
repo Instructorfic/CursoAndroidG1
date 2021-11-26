@@ -90,4 +90,21 @@ public class MainActivity2 extends AppCompatActivity {
         inflater.inflate(R.menu.menu,menu);
         return true;
     }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.mnuOption1:
+                showPage(item);
+                return true;
+            case R.id.mnuOption2:
+                dialPhoneNumber(item);
+                return true;
+            case R.id.mnuOption3:
+                showSettings(item);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
 }

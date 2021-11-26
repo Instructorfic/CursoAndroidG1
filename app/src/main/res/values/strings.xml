@@ -18,4 +18,6 @@
     <string name="menu_option1">Opción 1</string>
     <string name="menu_option2">Opción 2</string>
     <string name="menu_option3">Opción 3</string>
+    <string name="menu_sub1">Submenú</string>
+    <string name="menu_option_submenu1">Opción sub 1</string>
 </resources>
