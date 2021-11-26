@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_constraint_layout);
 
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
+
+
 
         btnLogin.setOnClickListener(testOnClickListener); //Opción 2 para gestión del evento clic
         //btnLogin.setOnClickListener(new ClickedButton());
@@ -82,11 +85,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //showActivity.setData(Uri.parse(webPageUrl));
         String message = "Hola Actividad 2";
         int error = 1;
+        EditText txtName = findViewById(R.id.etUsername);
+
+        String localName = txtName.getText().toString();
 
         //Crear paquete de información
         Bundle bundle = new Bundle();
         bundle.putString("message",message);
         bundle.putInt("error",error);
+        bundle.putString("name",localName);
 
         showActivity.putExtras(bundle);
 

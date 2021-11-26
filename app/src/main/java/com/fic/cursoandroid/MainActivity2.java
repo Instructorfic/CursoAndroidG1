@@ -34,12 +34,15 @@ public class MainActivity2 extends AppCompatActivity {
 
         String message = extras.getString("message","Error en el mensaje");
         int error = extras.getInt("error",-1);
+        String name = extras.getString("name","No existe un nombre de usuario");
 
         TextView txtMessage = (TextView) findViewById(R.id.txtMessage);
         TextView txtError = (TextView) findViewById(R.id.txtError);
+        TextView txtName = findViewById(R.id.txtName);
 
         txtMessage.setText(message);
         txtError.setText(String.valueOf(error));
+        txtName.setText(name);
 
 
         Button btnShowWebPage = (Button) findViewById(R.id.btnShowView);
