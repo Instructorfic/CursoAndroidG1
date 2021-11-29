@@ -74,4 +74,23 @@
         app:layout_constraintTop_toBottomOf="@id/txtError"
         />
 
+    <TextView
+        android:id="@+id/txtMenuContext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/login_margin"
+        android:text="@string/lorem_ipsum"
+        app:layout_constraintTop_toBottomOf="@id/txtName"
+        />
+
+    <ImageButton
+        android:id="@+id/btnPopUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_menu_web"
+        android:layout_margin="@dimen/login_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtMenuContext"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
