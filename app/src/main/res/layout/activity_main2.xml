@@ -93,4 +93,14 @@
         app:layout_constraintTop_toBottomOf="@id/txtMenuContext"
         />
 
+    <Button
+        android:id="@+id/btnAlert"
+        android:layout_margin="@dimen/login_margin"
+        android:backgroundTint="@color/fic_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_alert"
+        app:layout_constraintTop_toBottomOf="@id/btnPopUp"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

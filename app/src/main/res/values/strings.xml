@@ -22,4 +22,7 @@
     <string name="menu_option_submenu1">Opción sub 1</string>
     <string name="menu_context_edit">Editar</string>
     <string name="menu_context_share">Compartir</string>
+    <string name="alert_title">Alerta</string>
+    <string name="alert_message">Mensaje de alerta</string>
+    <string name="show_alert">Mostrar alert</string>
 </resources>

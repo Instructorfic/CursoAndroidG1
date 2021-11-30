@@ -1,11 +1,13 @@
 package com.fic.cursoandroid;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.ActionMode;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,6 +24,9 @@ import org.w3c.dom.Text;
 public class MainActivity2 extends AppCompatActivity {
 
     private ImageButton btnPopUp;
+    private ActionMode actionMode;
+    private Button btnAlert;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,9 +51,22 @@ public class MainActivity2 extends AppCompatActivity {
 
         /*Menú para contexto*/
         TextView txtMenuContext = findViewById(R.id.txtMenuContext);
-        registerForContextMenu(txtMenuContext);
+
+        //registerForContextMenu(txtMenuContext);
+
+        txtMenuContext.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if(actionMode != null) return false;
+                actionMode = MainActivity2.this.startActionMode(actionModeCallback);
+                txtMenuContext.setSelected(true);
+                return true;
+            }
+        });
+
 
         btnPopUp = findViewById(R.id.btnPopUp);
+
 
         btnPopUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +81,14 @@ public class MainActivity2 extends AppCompatActivity {
                     }
                 });
                 popup.show();
+            }
+        });
+
+        btnAlert = findViewById(R.id.btnAlert);
+        btnAlert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAlert();
             }
         });
 
@@ -154,5 +180,47 @@ public class MainActivity2 extends AppCompatActivity {
             default :
                     return super.onContextItemSelected(item);
         }
+    }
+
+    private ActionMode.Callback actionModeCallback = new ActionMode.Callback() {
+        @Override
+        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+            mode.getMenuInflater().inflate(R.menu.menu_context,menu);
+            mode.setTitle("Seleccione una opción");
+            return true;
+        }
+
+        @Override
+        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+            return false;
+        }
+
+        @Override
+        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+            switch (item.getItemId()){
+                case R.id.mnuContextEdit:
+                    Toast.makeText(getApplicationContext(),"Editar Action Mode",Toast.LENGTH_LONG).show();
+                    mode.finish();
+                    return true;
+                case R.id.mnuContextShare:
+                    Toast.makeText(getApplicationContext(),"Compartir Action Mode",Toast.LENGTH_LONG).show();
+                    mode.finish();
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        @Override
+        public void onDestroyActionMode(ActionMode mode) {
+            actionMode = null;
+        }
+    };
+
+    public void showAlert(){
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity2.this);
+        alertDialog.setTitle(R.string.alert_title);
+        alertDialog.setMessage(R.string.alert_message);
+        alertDialog.show();
     }
 }
