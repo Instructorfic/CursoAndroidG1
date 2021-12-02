@@ -16,44 +16,13 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-
-    <Button
-        android:id="@+id/btnShowView"
-        android:layout_margin="@dimen/login_margin"
-        android:backgroundTint="@color/fic_color"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/homeWebPageView"
-        app:layout_constraintTop_toBottomOf="@id/txtMain"
-        />
-
-    <Button
-        android:id="@+id/btnDial"
-        android:layout_margin="@dimen/login_margin"
-        android:backgroundTint="@color/fic_color"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/home_call"
-        app:layout_constraintTop_toBottomOf="@id/btnShowView"
-        />
-
-    <Button
-        android:id="@+id/btnSettings"
-        android:layout_margin="@dimen/login_margin"
-        android:backgroundTint="@color/fic_color"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/home_settings"
-        app:layout_constraintTop_toBottomOf="@id/btnDial"
-        />
-
     <TextView
         android:id="@+id/txtMessage"
         android:layout_width="match_parent"
         android:layout_margin="@dimen/login_margin"
         android:layout_height="wrap_content"
         android:textSize="@dimen/login_text_size"
-        app:layout_constraintTop_toBottomOf="@id/btnSettings"
+        app:layout_constraintTop_toBottomOf="@id/txtMain"
         />
 
     <TextView
@@ -100,6 +69,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/show_alert"
+        app:layout_constraintTop_toBottomOf="@id/etAlertMessage"
+        />
+
+    <EditText
+        android:id="@+id/etAlertMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/login_margin"
+        android:textSize="@dimen/login_text_size"
         app:layout_constraintTop_toBottomOf="@id/btnPopUp"
         />
 

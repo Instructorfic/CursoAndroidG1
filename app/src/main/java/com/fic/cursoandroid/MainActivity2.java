@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -26,6 +27,7 @@ public class MainActivity2 extends AppCompatActivity {
     private ImageButton btnPopUp;
     private ActionMode actionMode;
     private Button btnAlert;
+    private EditText etAlertMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,10 +87,15 @@ public class MainActivity2 extends AppCompatActivity {
         });
 
         btnAlert = findViewById(R.id.btnAlert);
+        etAlertMessage = findViewById(R.id.etAlertMessage);
         btnAlert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showAlert();
+                String message = etAlertMessage.getText().toString();
+                if(validateEditText(etAlertMessage)){
+                    showAlert(message);
+                }
+
             }
         });
 
@@ -96,31 +103,6 @@ public class MainActivity2 extends AppCompatActivity {
         txtError.setText(String.valueOf(error));
         txtName.setText(name);
 
-
-        Button btnShowWebPage = (Button) findViewById(R.id.btnShowView);
-        btnShowWebPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //showPage();
-            }
-        });
-
-
-        Button btnDial = (Button) findViewById(R.id.btnDial);
-        btnDial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //dialPhoneNumber();
-            }
-        });
-
-        Button btnSettings = (Button) findViewById(R.id.btnSettings);
-        btnSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //showSettings();
-            }
-        });
     }
 
     public void showPage(MenuItem item){
@@ -217,10 +199,20 @@ public class MainActivity2 extends AppCompatActivity {
         }
     };
 
-    public void showAlert(){
+    public void showAlert(String message){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity2.this);
         alertDialog.setTitle(R.string.alert_title);
-        alertDialog.setMessage(R.string.alert_message);
+        alertDialog.setMessage(message);
         alertDialog.show();
+    }
+
+    public boolean validateEditText(EditText editText){
+        boolean valid = true;
+        if(editText.length() == 0){
+            editText.requestFocus();
+            editText.setError(getText(R.string.required_field));
+            valid = false;
+        }
+        return valid;
     }
 }
