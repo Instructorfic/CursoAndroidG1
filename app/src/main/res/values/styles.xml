@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="baseStyle">
+        <item name="android:layout_margin">@dimen/login_margin</item>
+    </style>
+
+    <style name="textStyle" parent="baseStyle">
+        <item name="android:textSize">@dimen/login_text_size</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+</resources>

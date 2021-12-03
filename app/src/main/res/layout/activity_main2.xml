@@ -47,10 +47,10 @@
         android:id="@+id/txtMenuContext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/login_margin"
+        style="@style/textStyle"
         android:text="@string/lorem_ipsum"
         app:layout_constraintTop_toBottomOf="@id/txtName"
-        />
+         />
 
     <ImageButton
         android:id="@+id/btnPopUp"
@@ -64,7 +64,6 @@
 
     <Button
         android:id="@+id/btnAlert"
-        android:layout_margin="@dimen/login_margin"
         android:backgroundTint="@color/fic_color"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,8 +75,6 @@
         android:id="@+id/etAlertMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/login_margin"
-        android:textSize="@dimen/login_text_size"
         app:layout_constraintTop_toBottomOf="@id/btnPopUp"
         />
 
