@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fic.cursoandroid.capadatos.Student;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_constraint_layout);
 
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
+
+        Student student = new Student("Alexis ","Montaño","Araujo","alexis.montano@info.uas.edu.mx","6671000000","1","1");
+        setLog(student.toString());
 
 
 
