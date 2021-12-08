@@ -3,14 +3,11 @@ package com.fic.cursoandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.fic.cursoandroid.capadatos.Student;
 
@@ -32,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
 
-        Student student = new Student("Alexis ","Montaño","Araujo","alexis.montano@info.uas.edu.mx","6671000000","1","1");
+        Student student = new Student(1, "Alexis ","Montaño","Araujo","alexis.montano@info.uas.edu.mx","6671000000","1","1");
         setLog(student.toString());
 
 

@@ -1,6 +1,7 @@
 package com.fic.cursoandroid.capadatos;
 
 public class Student {
+    private long id;
     private String name;
     private String paternalSurname;
     private String maternalSurname;
@@ -9,7 +10,8 @@ public class Student {
     private String grade;
     private String group;
 
-    public Student(String name,String paternalSurname, String maternalSurname, String email, String phoneNumber, String grade, String group){
+    public Student(long id, String name, String paternalSurname, String maternalSurname, String email, String phoneNumber, String grade, String group){
+        this.id = id;
         this.name = name;
         this.paternalSurname = paternalSurname;
         this.maternalSurname = maternalSurname;
@@ -17,6 +19,14 @@ public class Student {
         this.phoneNumber = phoneNumber;
         this.grade = grade;
         this.group = group;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName(){
@@ -80,4 +90,6 @@ public class Student {
                 "name='" + name + '\'' +
         "}";
     }
+
+
 }
