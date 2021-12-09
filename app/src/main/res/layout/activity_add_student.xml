@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".capapresentacion.Student.AddStudentActivity">
+
+
+    <EditText
+        android:id="@+id/etStudentName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Student Name"
+        android:layout_margin="@dimen/login_margin"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etPaternalSurname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_margin="@dimen/login_margin"
+        android:hint="Paternal Surname"
+        app:layout_constraintTop_toBottomOf="@id/etStudentName" />
+
+    <EditText
+        android:id="@+id/etMaternalSurname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/login_margin"
+        android:inputType="textPersonName"
+        android:hint="Maternal Surname"
+        app:layout_constraintTop_toBottomOf="@id/etPaternalSurname" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/login_margin"
+        android:inputType="textPersonName"
+        android:hint="Email"
+        app:layout_constraintTop_toBottomOf="@id/etMaternalSurname"
+        />
+
+    <EditText
+        android:id="@+id/etPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/login_margin"
+        android:inputType="textPersonName"
+        android:hint="Phone Number"
+        app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+    <EditText
+        android:id="@+id/etGrade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/login_margin"
+        android:inputType="textPersonName"
+        android:hint="Grade"
+        app:layout_constraintTop_toBottomOf="@id/etPhoneNumber" />
+
+    <EditText
+        android:id="@+id/etGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/login_margin"
+        android:inputType="textPersonName"
+        android:hint="Group"
+        app:layout_constraintTop_toBottomOf="@id/etGrade"/>
+
+    <Button
+        android:id="@+id/btnSaveStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/login_margin"
+        android:text="@string/add_student_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etGroup" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/login_margin"
+        android:text="@string/add_student_cancel"
+        app:layout_constraintLeft_toRightOf="@id/btnSaveStudent"
+        app:layout_constraintTop_toBottomOf="@id/etGroup" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

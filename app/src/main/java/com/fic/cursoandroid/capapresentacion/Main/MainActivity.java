@@ -1,4 +1,4 @@
-package com.fic.cursoandroid;
+package com.fic.cursoandroid.capapresentacion.Main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.fic.cursoandroid.MainActivity2;
+import com.fic.cursoandroid.R;
 import com.fic.cursoandroid.capadatos.Student;
 
 
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     };
 
     private void startTestActivity(){
-        Intent showActivity = new Intent(getApplicationContext(),MainActivity2.class);
+        Intent showActivity = new Intent(getApplicationContext(), MainActivity2.class);
         //showActivity.setData(Uri.parse(webPageUrl));
         String message = "Hola Actividad 2";
         int error = 1;

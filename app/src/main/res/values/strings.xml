@@ -26,4 +26,6 @@
     <string name="alert_message">Mensaje de alerta</string>
     <string name="show_alert">Mostrar alert</string>
     <string name="required_field">Campo obligatorio</string>
+    <string name="add_student_cancel">Cancelar</string>
+    <string name="add_student_text">Guardar datos</string>
 </resources>
