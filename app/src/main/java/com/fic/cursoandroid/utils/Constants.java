@@ -7,4 +7,5 @@ public class Constants {
     public final static int DATABASE_VERSION = 1;
 
     public final static String FAILED_DATABASE_INSERT = "Ocurrió un error al amacenar la información";
+    public final static String VALIDATE_EMPTY_TEXT = "Existen campos obligatorios";
 }

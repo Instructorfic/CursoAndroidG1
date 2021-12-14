@@ -47,6 +47,14 @@ public class StudentController {
 
         Cursor cursor = db.query(Constants.STUDENT_TABLE_NAME,columns,null,null,null,null,null);
 
+        if(cursor == null){
+            return studentsList;
+        }
+
+        if(cursor.moveToFirst() == false){
+            return studentsList;
+        }
+
         do {
             long studentId = cursor.getLong(0);
             String name = cursor.getString(1);

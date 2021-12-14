@@ -54,6 +54,11 @@ public class NewStudentAcitivty extends AppCompatActivity {
             String grade = etGrade.getText().toString();
             String group = etGroup.getText().toString();
 
+            /*if(validateEditText(etName,etPaternalSurname,etMaternalSurname,etEmail,etPhoneNumber,etGrade,etGroup)){
+                Toast.makeText(getApplicationContext(),Constants.VALIDATE_EMPTY_TEXT,Toast.LENGTH_LONG).show();
+                return;
+            }*/
+
             Student student = new Student(0,name,paternalSurname,maternalSurname,email,phoneNumber,grade,group);
 
             long insertResult = studentController.saveStudent(student);
@@ -73,4 +78,16 @@ public class NewStudentAcitivty extends AppCompatActivity {
             finish();
         }
     };
+
+    protected boolean validateEditText(EditText... editTexts){
+        boolean result = true;
+
+        for (EditText text : editTexts){
+            if(text.getText().toString().isEmpty()){
+                result = false;
+            }
+        }
+
+        return result;
+    }
 }
