@@ -54,10 +54,10 @@ public class NewStudentAcitivty extends AppCompatActivity {
             String grade = etGrade.getText().toString();
             String group = etGroup.getText().toString();
 
-            /*if(validateEditText(etName,etPaternalSurname,etMaternalSurname,etEmail,etPhoneNumber,etGrade,etGroup)){
+            if(validateEditText(etName,etPaternalSurname,etMaternalSurname,etEmail,etPhoneNumber,etGrade,etGroup) == false){
                 Toast.makeText(getApplicationContext(),Constants.VALIDATE_EMPTY_TEXT,Toast.LENGTH_LONG).show();
                 return;
-            }*/
+            }
 
             Student student = new Student(0,name,paternalSurname,maternalSurname,email,phoneNumber,grade,group);
 
@@ -81,13 +81,12 @@ public class NewStudentAcitivty extends AppCompatActivity {
 
     protected boolean validateEditText(EditText... editTexts){
         boolean result = true;
-
-        for (EditText text : editTexts){
-            if(text.getText().toString().isEmpty()){
+        for (int i = 0; i < editTexts.length; i++){
+            if(editTexts[i].getText().toString().isEmpty()){
                 result = false;
+                editTexts[i].setError(Constants.REQUIRED_FIELD);
             }
         }
-
         return result;
     }
 }

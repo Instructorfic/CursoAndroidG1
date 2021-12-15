@@ -6,9 +6,9 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/login_margin"
     app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="8dp"
-    app:cardMaxElevation="10dp"
+    app:cardCornerRadius="@dimen/radius"
+    app:cardElevation="@dimen/radius"
+    app:cardMaxElevation="@dimen/elevation"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true"
     >

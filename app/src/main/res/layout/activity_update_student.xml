@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".capapresentacion.Student.NewStudentAcitivty">
-
+    tools:context=".capapresentacion.Student.UpdateStudentActivity">
 
     <EditText
         android:id="@+id/etStudentName"
@@ -88,6 +87,5 @@
         android:text="@string/add_student_cancel"
         app:layout_constraintLeft_toRightOf="@id/btnSaveStudent"
         app:layout_constraintTop_toBottomOf="@id/etGroup" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

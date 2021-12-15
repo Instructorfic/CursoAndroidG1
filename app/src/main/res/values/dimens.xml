@@ -9,5 +9,7 @@
     <dimen name="lorem_ipsum_size">50dp</dimen>
     <dimen name="lorem_ipsum_size_horizontal">250dp</dimen>
     <dimen name="lorem_ipsum_linear_size">150dp</dimen>
+    <dimen name="radius">8dp</dimen>
+    <dimen name="elevation">10dp</dimen>
 
 </resources>

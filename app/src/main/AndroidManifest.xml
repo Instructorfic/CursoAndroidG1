@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CursoAndroid">
-
+        <activity
+            android:name=".capapresentacion.Student.UpdateStudentActivity"
+            android:exported="true" />
         <activity
             android:name=".capapresentacion.Student.NewStudentAcitivty"
             android:exported="true" />
-
         <activity
             android:name=".capapresentacion.Student.StudentsActivity"
             android:exported="true">
