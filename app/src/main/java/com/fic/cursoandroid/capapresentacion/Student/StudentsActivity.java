@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -27,6 +28,7 @@ public class StudentsActivity extends AppCompatActivity {
     private FloatingActionButton fabAddStudent;
     private StudentController studentController;
     private RecyclerView recyclerViewStudents;
+    private SwipeRefreshLayout swipeRefreshLayoutStudents;
     private StudentAdapter studentAdapter;
     private DataAccess dataAccess;
     private ArrayList<Student> studentList;
@@ -42,6 +44,7 @@ public class StudentsActivity extends AppCompatActivity {
         fabAddStudent.setOnClickListener(addStudentListener);
 
         recyclerViewStudents = findViewById(R.id.rvStudents);
+        swipeRefreshLayoutStudents = findViewById(R.id.swipeRefreshStudents);
         studentController = new StudentController(StudentsActivity.this);
 
         studentList = new ArrayList<>();
@@ -80,6 +83,13 @@ public class StudentsActivity extends AppCompatActivity {
                 deleteStudent(selectedStudent);
             }
         }));
+
+        swipeRefreshLayoutStudents.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getStudents();
+            }
+        });
     }
 
     private View.OnClickListener addStudentListener = new View.OnClickListener() {
@@ -99,6 +109,7 @@ public class StudentsActivity extends AppCompatActivity {
         studentList = studentController.getStudents();
         studentAdapter.setStudentList(studentList);
         studentAdapter.notifyDataSetChanged();
+        swipeRefreshLayoutStudents.setRefreshing(false);
     }
 
     public void deleteStudent(Student selectedStudent){
